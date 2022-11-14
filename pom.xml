@@ -9,7 +9,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <exec.mainClass>projekuas.kelompok9.pencatatan_pengunjung_perpustakaan.Pencatatan_pengunjung_perpustakaan</exec.mainClass>
+        <exec.mainClass>projekuas.kelompok9.main.Main</exec.mainClass>
     </properties>
     <name>projek-uas-pbo</name>
 </project>
