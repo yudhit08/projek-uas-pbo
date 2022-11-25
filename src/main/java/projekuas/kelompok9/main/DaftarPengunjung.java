@@ -8,12 +8,12 @@ package projekuas.kelompok9.main;
  *
  * @author yudhit
  */
-public class DataPengunjung extends javax.swing.JFrame {
+public class DaftarPengunjung extends javax.swing.JFrame {
 
     /**
      * Creates new form Dashboard
      */
-    public DataPengunjung() {
+    public DaftarPengunjung() {
         initComponents();
     }
 
@@ -29,13 +29,22 @@ public class DataPengunjung extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        homeBtn = new javax.swing.JLabel();
-        inputMenuBtn = new javax.swing.JLabel();
         dataPengunjungBtn = new javax.swing.JLabel();
+        inputMenuBtn = new javax.swing.JLabel();
+        homeBtn = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -46,29 +55,85 @@ public class DataPengunjung extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setPreferredSize(new java.awt.Dimension(800, 411));
 
-        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("Helvetica", 0, 40)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Menu Data Pengunjung");
-        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jLabel5.setInheritsPopupMenu(false);
+        jLabel5.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel5.setText("No");
+
+        jLabel6.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel6.setText("Nama");
+
+        jLabel7.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel7.setText("Nomor Mahasiswa");
+
+        jLabel8.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel8.setText("Fakultas");
+
+        jLabel9.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel9.setText("Kepentingan");
+
+        jLabel10.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel10.setText("Tanggal");
+
+        jLabel11.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel11.setText("Kritik dan Saran");
+
+        jSeparator1.setBackground(new java.awt.Color(204, 204, 204));
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 552, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(403, Short.MAX_VALUE))
+                .addGap(21, 21, 21)
+                .addComponent(jLabel5)
+                .addGap(42, 42, 42)
+                .addComponent(jLabel6)
+                .addGap(205, 205, 205)
+                .addComponent(jLabel7)
+                .addGap(52, 52, 52)
+                .addComponent(jLabel8)
+                .addGap(45, 45, 45)
+                .addComponent(jLabel9)
+                .addGap(55, 55, 55)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addComponent(jLabel11)
+                .addGap(64, 64, 64))
+            .addComponent(jSeparator1)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
-                .addGap(333, 333, 333))
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(370, Short.MAX_VALUE))
         );
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Helvetica", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel3.setText("Masukkan Nama Mahasiswa");
+
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField1.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField1.setBorder(null);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -76,21 +141,28 @@ public class DataPengunjung extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(60, 60, 60)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 1055, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(152, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 1055, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addGap(54, 54, 54)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("Kunjungan Perpustakaan Universitas Riau");
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo-unri40x40.png"))); // NOI18N
@@ -123,6 +195,43 @@ public class DataPengunjung extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        dataPengunjungBtn.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        dataPengunjungBtn.setForeground(new java.awt.Color(51, 204, 0));
+        dataPengunjungBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dataPengunjungBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
+        dataPengunjungBtn.setText("Daftar Pengunjung");
+        dataPengunjungBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        dataPengunjungBtn.setIconTextGap(20);
+        dataPengunjungBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                dataPengunjungBtnMouseClicked(evt);
+            }
+        });
+        dataPengunjungBtn.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                dataPengunjungBtnKeyPressed(evt);
+            }
+        });
+
+        inputMenuBtn.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        inputMenuBtn.setForeground(new java.awt.Color(51, 51, 51));
+        inputMenuBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        inputMenuBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
+        inputMenuBtn.setText("Kunjungan");
+        inputMenuBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        inputMenuBtn.setIconTextGap(20);
+        inputMenuBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                inputMenuBtnMouseClicked(evt);
+            }
+        });
+        inputMenuBtn.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                inputMenuBtnKeyPressed(evt);
+            }
+        });
+
+        homeBtn.setBackground(new java.awt.Color(255, 255, 255));
         homeBtn.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
         homeBtn.setForeground(new java.awt.Color(51, 51, 51));
         homeBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -141,53 +250,20 @@ public class DataPengunjung extends javax.swing.JFrame {
             }
         });
 
-        inputMenuBtn.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        inputMenuBtn.setForeground(new java.awt.Color(51, 51, 51));
-        inputMenuBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        inputMenuBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
-        inputMenuBtn.setText("Input Data");
-        inputMenuBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        inputMenuBtn.setIconTextGap(20);
-        inputMenuBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                inputMenuBtnMouseClicked(evt);
-            }
-        });
-        inputMenuBtn.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                inputMenuBtnKeyPressed(evt);
-            }
-        });
-
-        dataPengunjungBtn.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        dataPengunjungBtn.setForeground(new java.awt.Color(51, 51, 51));
-        dataPengunjungBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dataPengunjungBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
-        dataPengunjungBtn.setText("Data Pengunjung");
-        dataPengunjungBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        dataPengunjungBtn.setIconTextGap(20);
-        dataPengunjungBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                dataPengunjungBtnMouseClicked(evt);
-            }
-        });
-        dataPengunjungBtn.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                dataPengunjungBtnKeyPressed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(homeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputMenuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dataPengunjungBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(13, Short.MAX_VALUE))
+                    .addComponent(dataPengunjungBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(homeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputMenuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,7 +274,7 @@ public class DataPengunjung extends javax.swing.JFrame {
                 .addComponent(inputMenuBtn)
                 .addGap(35, 35, 35)
                 .addComponent(dataPengunjungBtn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(456, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -208,7 +284,7 @@ public class DataPengunjung extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1267, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1161, Short.MAX_VALUE))
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -226,22 +302,23 @@ public class DataPengunjung extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void homeBtnKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_homeBtnKeyPressed
-        // TODO add your handling code her
-    }//GEN-LAST:event_homeBtnKeyPressed
+    private void dataPengunjungBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dataPengunjungBtnMouseClicked
+        // TODO add your handling code here:
+        DaftarPengunjung daftarPengunjung = new DaftarPengunjung();
+        daftarPengunjung.setVisible(true);
 
-    private void homeBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBtnMouseClicked
-        Home home = new Home();
-        home.setVisible(true);
-        
         dispose();
-    }//GEN-LAST:event_homeBtnMouseClicked
+    }//GEN-LAST:event_dataPengunjungBtnMouseClicked
+
+    private void dataPengunjungBtnKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dataPengunjungBtnKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dataPengunjungBtnKeyPressed
 
     private void inputMenuBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputMenuBtnMouseClicked
         // TODO add your handling code here:
-        InputData inputMenu = new InputData();
-        inputMenu.setVisible(true);
-        
+        Kunjungan kunjungan = new Kunjungan();
+        kunjungan.setVisible(true);
+
         dispose();
     }//GEN-LAST:event_inputMenuBtnMouseClicked
 
@@ -249,17 +326,16 @@ public class DataPengunjung extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputMenuBtnKeyPressed
 
-    private void dataPengunjungBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dataPengunjungBtnMouseClicked
-        // TODO add your handling code here:
-        DataPengunjung dataPengunjung = new DataPengunjung();
-        dataPengunjung.setVisible(true);
-        
-        dispose();
-    }//GEN-LAST:event_dataPengunjungBtnMouseClicked
+    private void homeBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBtnMouseClicked
+        Home home = new Home();
+        home.setVisible(true);
 
-    private void dataPengunjungBtnKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dataPengunjungBtnKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dataPengunjungBtnKeyPressed
+        dispose();
+    }//GEN-LAST:event_homeBtnMouseClicked
+
+    private void homeBtnKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_homeBtnKeyPressed
+        // TODO add your handling code her
+    }//GEN-LAST:event_homeBtnKeyPressed
 
     /**
      * @param args the command line arguments
@@ -278,14 +354,22 @@ public class DataPengunjung extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DataPengunjung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DaftarPengunjung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DataPengunjung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DaftarPengunjung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DataPengunjung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DaftarPengunjung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DataPengunjung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DaftarPengunjung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -298,7 +382,7 @@ public class DataPengunjung extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DataPengunjung().setVisible(true);
+                new DaftarPengunjung().setVisible(true);
             }
         });
     }
@@ -308,11 +392,20 @@ public class DataPengunjung extends javax.swing.JFrame {
     private javax.swing.JLabel homeBtn;
     private javax.swing.JLabel inputMenuBtn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

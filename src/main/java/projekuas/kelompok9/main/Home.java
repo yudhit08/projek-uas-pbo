@@ -141,13 +141,13 @@ public class Home extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(68, 68, 68)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("Kunjungan Perpustakaan Universitas Riau");
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo-unri40x40.png"))); // NOI18N
@@ -180,8 +180,9 @@ public class Home extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        homeBtn.setBackground(new java.awt.Color(255, 255, 255));
         homeBtn.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        homeBtn.setForeground(new java.awt.Color(51, 51, 51));
+        homeBtn.setForeground(new java.awt.Color(0, 204, 0));
         homeBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         homeBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
         homeBtn.setText("Halaman Awal");
@@ -202,7 +203,7 @@ public class Home extends javax.swing.JFrame {
         inputMenuBtn.setForeground(new java.awt.Color(51, 51, 51));
         inputMenuBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         inputMenuBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
-        inputMenuBtn.setText("Input Data");
+        inputMenuBtn.setText("Kunjungan");
         inputMenuBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         inputMenuBtn.setIconTextGap(20);
         inputMenuBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -220,7 +221,7 @@ public class Home extends javax.swing.JFrame {
         dataPengunjungBtn.setForeground(new java.awt.Color(51, 51, 51));
         dataPengunjungBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         dataPengunjungBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
-        dataPengunjungBtn.setText("Data Pengunjung");
+        dataPengunjungBtn.setText("Daftar Pengunjung");
         dataPengunjungBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dataPengunjungBtn.setIconTextGap(20);
         dataPengunjungBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -239,12 +240,15 @@ public class Home extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(homeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputMenuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dataPengunjungBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(13, Short.MAX_VALUE))
+                    .addComponent(dataPengunjungBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(homeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputMenuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,7 +259,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(inputMenuBtn)
                 .addGap(35, 35, 35)
                 .addComponent(dataPengunjungBtn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(456, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -273,9 +277,10 @@ public class Home extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 633, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 633, Short.MAX_VALUE))
+                .addGap(0, 0, 0))
         );
 
         jPanel3.getAccessibleContext().setAccessibleDescription("");
@@ -296,8 +301,8 @@ public class Home extends javax.swing.JFrame {
 
     private void inputMenuBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputMenuBtnMouseClicked
         // TODO add your handling code here:
-        InputData inputMenu = new InputData();
-        inputMenu.setVisible(true);
+        Kunjungan kunjungan = new Kunjungan();
+        kunjungan.setVisible(true);
         
         dispose();
     }//GEN-LAST:event_inputMenuBtnMouseClicked
@@ -308,14 +313,14 @@ public class Home extends javax.swing.JFrame {
 
     private void dataPengunjungBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dataPengunjungBtnMouseClicked
         // TODO add your handling code here:
+        DaftarPengunjung daftarPengunjung = new DaftarPengunjung();
+        daftarPengunjung.setVisible(true);
+        
+        dispose();
     }//GEN-LAST:event_dataPengunjungBtnMouseClicked
 
     private void dataPengunjungBtnKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dataPengunjungBtnKeyPressed
         // TODO add your handling code here:
-        DataPengunjung dataPengunjung = new DataPengunjung();
-        dataPengunjung.setVisible(true);
-        
-        dispose();
     }//GEN-LAST:event_dataPengunjungBtnKeyPressed
 
     /**
