@@ -12,4 +12,11 @@
         <exec.mainClass>projekuas.kelompok9.main.Main</exec.mainClass>
     </properties>
     <name>projek-uas-pbo</name>
+    <dependencies>
+        <dependency>
+            <groupId>group.id</groupId>
+            <artifactId>mysql-connector</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
 </project>

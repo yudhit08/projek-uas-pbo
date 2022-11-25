@@ -184,7 +184,7 @@ public class Home extends javax.swing.JFrame {
         homeBtn.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
         homeBtn.setForeground(new java.awt.Color(0, 204, 0));
         homeBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        homeBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
+        homeBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/home (1).png"))); // NOI18N
         homeBtn.setText("Halaman Awal");
         homeBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         homeBtn.setIconTextGap(20);
@@ -202,7 +202,7 @@ public class Home extends javax.swing.JFrame {
         inputMenuBtn.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
         inputMenuBtn.setForeground(new java.awt.Color(51, 51, 51));
         inputMenuBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        inputMenuBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
+        inputMenuBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add-file.png"))); // NOI18N
         inputMenuBtn.setText("Kunjungan");
         inputMenuBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         inputMenuBtn.setIconTextGap(20);
@@ -220,7 +220,7 @@ public class Home extends javax.swing.JFrame {
         dataPengunjungBtn.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
         dataPengunjungBtn.setForeground(new java.awt.Color(51, 51, 51));
         dataPengunjungBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dataPengunjungBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
+        dataPengunjungBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/list (1).png"))); // NOI18N
         dataPengunjungBtn.setText("Daftar Pengunjung");
         dataPengunjungBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dataPengunjungBtn.setIconTextGap(20);
@@ -279,7 +279,7 @@ public class Home extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 633, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 657, Short.MAX_VALUE))
                 .addGap(0, 0, 0))
         );
 

@@ -4,6 +4,10 @@
  */
 package projekuas.kelompok9.main;
 
+import java.sql.*;
+import javax.swing.JOptionPane;
+import javax.swing.table.*;
+
 /**
  *
  * @author yudhit
@@ -15,6 +19,7 @@ public class DaftarPengunjung extends javax.swing.JFrame {
      */
     public DaftarPengunjung() {
         initComponents();
+        tampilData();
     }
 
     /**
@@ -28,14 +33,8 @@ public class DaftarPengunjung extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
@@ -55,74 +54,54 @@ public class DaftarPengunjung extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setPreferredSize(new java.awt.Dimension(800, 411));
 
-        jLabel5.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel5.setText("No");
+        jTable1.setBackground(new java.awt.Color(255, 255, 255));
+        jTable1.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(51, 51, 51));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        jLabel6.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel6.setText("Nama");
+            },
+            new String [] {
+                "No", "Nama", "Nomor Mahasiswa", "Fakultas", "Kepentingan", "Tanggal", "Kritik dan Saran"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
 
-        jLabel7.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel7.setText("Nomor Mahasiswa");
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
-        jLabel8.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel8.setText("Fakultas");
-
-        jLabel9.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel9.setText("Kepentingan");
-
-        jLabel10.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel10.setText("Tanggal");
-
-        jLabel11.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel11.setText("Kritik dan Saran");
-
-        jSeparator1.setBackground(new java.awt.Color(204, 204, 204));
-        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.setFocusable(false);
+        jTable1.setRowHeight(30);
+        jTable1.getTableHeader().setResizingAllowed(false);
+        jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(1);
+            jTable1.getColumnModel().getColumn(1).setMinWidth(100);
+            jTable1.getColumnModel().getColumn(1).setPreferredWidth(50);
+        }
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel5)
-                .addGap(42, 42, 42)
-                .addComponent(jLabel6)
-                .addGap(205, 205, 205)
-                .addComponent(jLabel7)
-                .addGap(52, 52, 52)
-                .addComponent(jLabel8)
-                .addGap(45, 45, 45)
-                .addComponent(jLabel9)
-                .addGap(55, 55, 55)
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                .addComponent(jLabel11)
-                .addGap(64, 64, 64))
-            .addComponent(jSeparator1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1055, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(370, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -156,7 +135,7 @@ public class DaftarPengunjung extends javax.swing.JFrame {
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -198,7 +177,7 @@ public class DaftarPengunjung extends javax.swing.JFrame {
         dataPengunjungBtn.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
         dataPengunjungBtn.setForeground(new java.awt.Color(51, 204, 0));
         dataPengunjungBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dataPengunjungBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
+        dataPengunjungBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/list.png"))); // NOI18N
         dataPengunjungBtn.setText("Daftar Pengunjung");
         dataPengunjungBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dataPengunjungBtn.setIconTextGap(20);
@@ -216,7 +195,7 @@ public class DaftarPengunjung extends javax.swing.JFrame {
         inputMenuBtn.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
         inputMenuBtn.setForeground(new java.awt.Color(51, 51, 51));
         inputMenuBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        inputMenuBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
+        inputMenuBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add-file.png"))); // NOI18N
         inputMenuBtn.setText("Kunjungan");
         inputMenuBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         inputMenuBtn.setIconTextGap(20);
@@ -235,7 +214,7 @@ public class DaftarPengunjung extends javax.swing.JFrame {
         homeBtn.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
         homeBtn.setForeground(new java.awt.Color(51, 51, 51));
         homeBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        homeBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
+        homeBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/home.png"))); // NOI18N
         homeBtn.setText("Halaman Awal");
         homeBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         homeBtn.setIconTextGap(20);
@@ -294,7 +273,7 @@ public class DaftarPengunjung extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 633, Short.MAX_VALUE)))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 657, Short.MAX_VALUE)))
         );
 
         jPanel3.getAccessibleContext().setAccessibleDescription("");
@@ -337,6 +316,42 @@ public class DaftarPengunjung extends javax.swing.JFrame {
         // TODO add your handling code her
     }//GEN-LAST:event_homeBtnKeyPressed
 
+    private void tampilData() {
+        try {
+            //memulai koneksi
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/perpustakaan","root","");
+            //username = root
+            //password = null
+            
+            Statement stm = con.createStatement();
+            
+            //mysql query
+            String sql = "SELECT * FROM pengunjung";
+            
+            ResultSet rs = stm.executeQuery(sql);
+            
+            int i = 1;
+            
+            while(rs.next()) {
+                //data akan ditambahkan sampai index terakhir
+                String no = String.valueOf(i);
+                String nama = rs.getString("name");
+                String nim = rs.getString("nim");
+                String fakultas = rs.getString("fakultas");
+                String kepentingan = rs.getString("kepentingan");
+                String tanggal = String.valueOf(rs.getDate("tanggal"));
+                String krisar = rs.getString("kritik_dan_saran");
+                
+                String tbData[] = {no,nama,nim,fakultas,kepentingan,tanggal,krisar};
+                DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
+                
+                tblModel.addRow(tbData);
+                i++;
+            }
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(this, e);
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -392,20 +407,14 @@ public class DaftarPengunjung extends javax.swing.JFrame {
     private javax.swing.JLabel homeBtn;
     private javax.swing.JLabel inputMenuBtn;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
