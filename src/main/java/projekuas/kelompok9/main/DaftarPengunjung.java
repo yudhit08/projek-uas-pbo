@@ -36,7 +36,7 @@ public class DaftarPengunjung extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        searchBox = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -109,10 +109,15 @@ public class DaftarPengunjung extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Masukkan Nama Mahasiswa");
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField1.setBorder(null);
+        searchBox.setBackground(new java.awt.Color(255, 255, 255));
+        searchBox.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
+        searchBox.setForeground(new java.awt.Color(153, 153, 153));
+        searchBox.setBorder(null);
+        searchBox.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                searchBoxKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -121,7 +126,7 @@ public class DaftarPengunjung extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchBox, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 1055, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(46, Short.MAX_VALUE))
@@ -132,7 +137,7 @@ public class DaftarPengunjung extends javax.swing.JFrame {
                 .addGap(54, 54, 54)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(searchBox, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(79, Short.MAX_VALUE))
@@ -316,6 +321,45 @@ public class DaftarPengunjung extends javax.swing.JFrame {
         // TODO add your handling code her
     }//GEN-LAST:event_homeBtnKeyPressed
 
+    private void searchBoxKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchBoxKeyPressed
+        // TODO add your handling code here:
+        String cari = searchBox.getText();
+        DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
+        tblModel.setRowCount(0);
+         try {
+            //memulai koneksi
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/perpustakaan","root","");
+            //username = root
+            //password = null
+            
+            Statement stm = con.createStatement();
+            
+            //mysql query
+            String sql = "SELECT * FROM pengunjung WHERE name LIKE '"+cari+"%'";
+            
+            ResultSet rs = stm.executeQuery(sql);
+            
+            int i = 1;
+            while(rs.next()) {
+                //data akan ditambahkan sampai index terakhir
+                String no = String.valueOf(i);
+                String nama = rs.getString("name");
+                String nim = rs.getString("nim");
+                String fakultas = rs.getString("fakultas");
+                String kepentingan = rs.getString("kepentingan");
+                String tanggal = String.valueOf(rs.getDate("tanggal"));
+                String krisar = rs.getString("kritik_dan_saran");
+                
+                String tbData[] = {no,nama,nim,fakultas,kepentingan,tanggal,krisar};
+                
+                tblModel.addRow(tbData);
+                i++;
+            }
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(this, e);
+        }
+    }//GEN-LAST:event_searchBoxKeyPressed
+
     private void tampilData() {
         try {
             //memulai koneksi
@@ -415,6 +459,6 @@ public class DaftarPengunjung extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField searchBox;
     // End of variables declaration//GEN-END:variables
 }

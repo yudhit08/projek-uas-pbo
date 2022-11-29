@@ -55,7 +55,7 @@ public class Home extends javax.swing.JFrame {
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(125, 125, 125));
+        jTextArea1.setForeground(new java.awt.Color(51, 51, 51));
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(6);
         jTextArea1.setTabSize(4);

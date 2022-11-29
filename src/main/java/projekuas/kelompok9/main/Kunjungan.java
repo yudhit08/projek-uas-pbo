@@ -17,8 +17,10 @@ public class Kunjungan extends javax.swing.JFrame {
     /**
      * Creates new form Dashboard
      */
+    
     public Kunjungan() {
         initComponents();
+        countPengunjung();
     }
 
     /**
@@ -35,15 +37,16 @@ public class Kunjungan extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        pengunjungKe = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        kunjunganHari = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        kunjunganBulan = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
+        jCalendar2 = new com.toedter.calendar.JCalendar();
         jPanel6 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
@@ -90,10 +93,10 @@ public class Kunjungan extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Anda adalah pengunjung ke");
 
-        jLabel5.setFont(new java.awt.Font("Helvetica", 0, 48)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(102, 204, 0));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("26");
+        pengunjungKe.setFont(new java.awt.Font("Helvetica", 0, 48)); // NOI18N
+        pengunjungKe.setForeground(new java.awt.Color(102, 204, 0));
+        pengunjungKe.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pengunjungKe.setText("26");
 
         jLabel6.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 102, 102));
@@ -103,10 +106,10 @@ public class Kunjungan extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(102, 102, 102));
         jLabel7.setText("Hari        :");
 
-        jLabel8.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(102, 204, 0));
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("26");
+        kunjunganHari.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
+        kunjunganHari.setForeground(new java.awt.Color(102, 204, 0));
+        kunjunganHari.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        kunjunganHari.setText("26");
 
         jLabel9.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(102, 102, 102));
@@ -116,10 +119,10 @@ public class Kunjungan extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(102, 102, 102));
         jLabel10.setText("Bulan     :");
 
-        jLabel11.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(102, 204, 0));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("26");
+        kunjunganBulan.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
+        kunjunganBulan.setForeground(new java.awt.Color(102, 204, 0));
+        kunjunganBulan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        kunjunganBulan.setText("26");
 
         jLabel12.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(102, 102, 102));
@@ -142,21 +145,21 @@ public class Kunjungan extends javax.swing.JFrame {
                             .addGap(78, 78, 78)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLabel6)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(pengunjungKe, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jPanel4Layout.createSequentialGroup()
                             .addComponent(jLabel10)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel11)
+                            .addComponent(kunjunganBulan)
                             .addGap(28, 28, 28)
                             .addComponent(jLabel12))
                         .addGroup(jPanel4Layout.createSequentialGroup()
                             .addComponent(jLabel7)
                             .addGap(18, 18, 18)
-                            .addComponent(jLabel8)
+                            .addComponent(kunjunganHari)
                             .addGap(28, 28, 28)
                             .addComponent(jLabel9))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,18 +169,18 @@ public class Kunjungan extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pengunjungKe, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel8)
+                    .addComponent(kunjunganHari)
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jLabel11)
+                    .addComponent(kunjunganBulan)
                     .addComponent(jLabel12))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
@@ -189,11 +192,11 @@ public class Kunjungan extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addComponent(jCalendar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 250, Short.MAX_VALUE)
+            .addComponent(jCalendar2, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
         );
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
@@ -273,6 +276,11 @@ public class Kunjungan extends javax.swing.JFrame {
         bacaBuku.setForeground(new java.awt.Color(153, 153, 153));
         bacaBuku.setText("Baca Buku");
         bacaBuku.setIconTextGap(10);
+        bacaBuku.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bacaBukuActionPerformed(evt);
+            }
+        });
 
         pinjamBuku.setBackground(new java.awt.Color(255, 255, 255));
         pinjamBuku.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
@@ -559,6 +567,19 @@ public class Kunjungan extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        String kepentingan = "";
+        if(bacaBuku.isSelected()) {
+            kepentingan += "Baca Buku ";
+        }
+        if(pinjamBuku.isSelected()) {
+            kepentingan += "Pinjam Buku ";
+        }
+        if(kembalikanBuku.isSelected()) {
+            kepentingan += "Kembalikan Buku ";
+        }
+        if(lainLain.isSelected()) {
+            kepentingan += "Lain Lain ";
+        }
         String nama = nameField.getText();
         String nim = nimField.getText();
         String fakultas = fakultasField.getText();
@@ -574,18 +595,66 @@ public class Kunjungan extends javax.swing.JFrame {
             
             Statement stm = con.createStatement();
             
-            String sql = "INSERT INTO pengunjung(name,nim,fakultas,kepentingan,tanggal,kritik_dan_saran) VALUES('"+nama+"','"+nim+"','"+fakultas+"','lain-lain','"+dtf.format(now)+"','"+kritikSaran+"')";
+            String sql = "INSERT INTO pengunjung(name,nim,fakultas,kepentingan,tanggal,kritik_dan_saran) VALUES('"+nama+"','"+nim+"','"+fakultas+"','"+kepentingan+"','"+dtf.format(now)+"','"+kritikSaran+"')";
             
             stm.executeUpdate(sql);
             JOptionPane.showMessageDialog(this, "Data anda berhasil direkam");
             
             con.close();
+            countPengunjung();
+            
+            nameField.setText("");
+            nimField.setText("");
+            fakultasField.setText("");
+            kritikSaranField.setText("");
+            
+            bacaBuku.setSelected(false);
+            pinjamBuku.setSelected(false);
+            kembalikanBuku.setSelected(false);
+            lainLain.setSelected(false);
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this,e);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void countPengunjung() {
+        try {
+            //Class.forName("com.mysql.cj.jdbc.Driver");
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");  
+            LocalDateTime now = LocalDateTime.now();  
+            
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/perpustakaan","root","");
+            
+            Statement stm = con.createStatement();
+            
+            String sql = "SELECT * FROM pengunjung";
+            
+            ResultSet rs = stm.executeQuery(sql);
+           
+            int i = 0;
+            int j = 0;
+            while(rs.next()) {
+                String tanggal = String.valueOf(rs.getDate("tanggal"));
+                String bulanDb = tanggal.substring(5,7);
+                String bulanIni = dtf.format(now).substring(5,7);
+                if(tanggal.equals(dtf.format(now))) {
+                    i++;
+                }
+                if(bulanDb.equals(bulanIni)){
+                    j++;
+                }
+            }
+            pengunjungKe.setText(String.valueOf(i+1));
+            kunjunganHari.setText(String.valueOf(i));
+            kunjunganBulan.setText(String.valueOf(j));
+            con.close();
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this,e);
+        }
+    }
+    
     private void dataPengunjungBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dataPengunjungBtnMouseClicked
         // TODO add your handling code here:
         DaftarPengunjung daftarPengunjung = new DaftarPengunjung();
@@ -620,6 +689,11 @@ public class Kunjungan extends javax.swing.JFrame {
     private void homeBtnKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_homeBtnKeyPressed
         // TODO add your handling code her
     }//GEN-LAST:event_homeBtnKeyPressed
+
+    private void bacaBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bacaBukuActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_bacaBukuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -671,9 +745,9 @@ public class Kunjungan extends javax.swing.JFrame {
     private javax.swing.JLabel homeBtn;
     private javax.swing.JLabel inputMenuBtn;
     private javax.swing.JButton jButton1;
+    private com.toedter.calendar.JCalendar jCalendar2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel23;
@@ -686,10 +760,8 @@ public class Kunjungan extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -701,9 +773,12 @@ public class Kunjungan extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JCheckBox kembalikanBuku;
     private javax.swing.JTextArea kritikSaranField;
+    private javax.swing.JLabel kunjunganBulan;
+    private javax.swing.JLabel kunjunganHari;
     private javax.swing.JCheckBox lainLain;
     private javax.swing.JTextField nameField;
     private javax.swing.JTextField nimField;
+    private javax.swing.JLabel pengunjungKe;
     private javax.swing.JCheckBox pinjamBuku;
     // End of variables declaration//GEN-END:variables
 }
