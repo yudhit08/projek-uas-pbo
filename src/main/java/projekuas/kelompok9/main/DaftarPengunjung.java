@@ -117,6 +117,9 @@ public class DaftarPengunjung extends javax.swing.JFrame {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 searchBoxKeyPressed(evt);
             }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                searchBoxKeyReleased(evt);
+            }
         });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -323,6 +326,11 @@ public class DaftarPengunjung extends javax.swing.JFrame {
 
     private void searchBoxKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchBoxKeyPressed
         // TODO add your handling code here:
+        
+    }//GEN-LAST:event_searchBoxKeyPressed
+
+    private void searchBoxKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchBoxKeyReleased
+        // TODO add your handling code here:
         String cari = searchBox.getText();
         DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
         tblModel.setRowCount(0);
@@ -358,7 +366,7 @@ public class DaftarPengunjung extends javax.swing.JFrame {
         } catch(Exception e) {
             JOptionPane.showMessageDialog(this, e);
         }
-    }//GEN-LAST:event_searchBoxKeyPressed
+    }//GEN-LAST:event_searchBoxKeyReleased
 
     private void tampilData() {
         try {
