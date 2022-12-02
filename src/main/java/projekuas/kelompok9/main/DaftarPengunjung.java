@@ -85,7 +85,6 @@ public class DaftarPengunjung extends javax.swing.JFrame {
         jTable1.getTableHeader().setResizingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
             jTable1.getColumnModel().getColumn(0).setPreferredWidth(1);
             jTable1.getColumnModel().getColumn(1).setMinWidth(100);
             jTable1.getColumnModel().getColumn(1).setPreferredWidth(50);
@@ -113,6 +112,11 @@ public class DaftarPengunjung extends javax.swing.JFrame {
         searchBox.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
         searchBox.setForeground(new java.awt.Color(153, 153, 153));
         searchBox.setBorder(null);
+        searchBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchBoxActionPerformed(evt);
+            }
+        });
         searchBox.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 searchBoxKeyPressed(evt);
@@ -367,6 +371,10 @@ public class DaftarPengunjung extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, e);
         }
     }//GEN-LAST:event_searchBoxKeyReleased
+
+    private void searchBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchBoxActionPerformed
 
     private void tampilData() {
         try {

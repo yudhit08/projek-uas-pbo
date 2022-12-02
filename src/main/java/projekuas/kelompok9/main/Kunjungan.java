@@ -188,6 +188,8 @@ public class Kunjungan extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setPreferredSize(new java.awt.Dimension(800, 411));
 
+        jCalendar2.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -412,7 +414,7 @@ public class Kunjungan extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(76, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 547, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -537,7 +539,7 @@ public class Kunjungan extends javax.swing.JFrame {
                 .addComponent(inputMenuBtn)
                 .addGap(35, 35, 35)
                 .addComponent(dataPengunjungBtn)
-                .addContainerGap(456, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -555,9 +557,9 @@ public class Kunjungan extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 657, Short.MAX_VALUE)))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 669, Short.MAX_VALUE)))
         );
 
         jPanel3.getAccessibleContext().setAccessibleDescription("");
@@ -565,20 +567,54 @@ public class Kunjungan extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private static boolean isAlphabets(String str) {
+ 
+        // check for null & empty
+        if(str == null || str.isEmpty() || str.length() == 0) {
+ 
+            // return false
+            return false;
+        }
+ 
+ 
+        // return if its all match
+        return str.chars().allMatch(ch -> Character.isLetter(ch));
+    }
+    
+    public static boolean isNumeric(String strNum) {
+        if (strNum == null) {
+            return false;
+        }
+        try {
+            int d = Integer.parseInt(strNum);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+            return true;
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String kepentingan = "";
         if(bacaBuku.isSelected()) {
-            kepentingan += "Baca Buku ";
+            if(kepentingan.length() != 0)
+                kepentingan += ", ";
+            kepentingan += "Baca Buku";
         }
         if(pinjamBuku.isSelected()) {
-            kepentingan += "Pinjam Buku ";
+            if(kepentingan.length() != 0)
+                kepentingan += ", ";
+            kepentingan += "Pinjam Buku";
         }
         if(kembalikanBuku.isSelected()) {
-            kepentingan += "Kembalikan Buku ";
+            if(kepentingan.length() != 0)
+                kepentingan += ", ";
+            kepentingan += "Kembalikan Buku";
         }
         if(lainLain.isSelected()) {
-            kepentingan += "Lain Lain ";
+            if(kepentingan.length() != 0)
+                kepentingan += ", ";
+            kepentingan += "Lain Lain";
         }
         String nama = nameField.getText();
         String nim = nimField.getText();
@@ -588,7 +624,16 @@ public class Kunjungan extends javax.swing.JFrame {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
         LocalDateTime now = LocalDateTime.now();  
         
-        try {
+        if(!isAlphabets(nama)) {
+            JOptionPane.showMessageDialog(this, "Masukkan Nama anda dengan benar");
+        } else if (!isNumeric(nim)) {
+            JOptionPane.showMessageDialog(this, "Masukkan Nomor Mahasiswa anda dengan benar");
+        } else if (!isAlphabets(fakultas)) {
+            JOptionPane.showMessageDialog(this, "Masukkan Fakultas anda dengan benar");
+        } else if (kepentingan.equals("")) {
+            JOptionPane.showMessageDialog(this, "Masukkan kepentingan anda ");
+        } else {
+            try {
             //Class.forName("com.mysql.cj.jdbc.Driver");
             
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/perpustakaan","root","");
@@ -613,8 +658,9 @@ public class Kunjungan extends javax.swing.JFrame {
             kembalikanBuku.setSelected(false);
             lainLain.setSelected(false);
             
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this,e);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this,e);
+            }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

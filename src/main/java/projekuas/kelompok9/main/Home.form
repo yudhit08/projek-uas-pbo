@@ -97,9 +97,9 @@
                       <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel4" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
-                          <Component id="jPanel7" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel5" alignment="0" min="-2" pref="552" max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" alignment="0" min="-2" pref="511" max="-2" attributes="0"/>
+                          <Component id="jPanel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" alignment="0" min="-2" pref="508" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="jLabel3" min="-2" pref="348" max="-2" attributes="0"/>
@@ -110,20 +110,23 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel3" min="-2" pref="361" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                      <Component id="jLabel5" pref="82" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel4" max="32767" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="227" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jLabel3" min="-2" pref="373" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                              <Component id="jLabel5" pref="47" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel4" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" pref="265" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -152,7 +155,7 @@
                     <Property name="lineWrap" type="boolean" value="true"/>
                     <Property name="rows" type="int" value="6"/>
                     <Property name="tabSize" type="int" value="4"/>
-                    <Property name="text" type="java.lang.String" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum &#xa;&#xa;vehicula ligula vitae aliquam. Sed ut egestas ipsum. Quisque ac condi&#xa;&#xa;mentum nibh. Donec vel est in massa imperdiet dictum sit amet dapibu&#xa;&#xa;s nisl. Ut magna erat, vehicula nec dolor nec, semper ultrices risus. Cra&#xa;&#xa;s sodales ut nulla sit amet porttitor."/>
+                    <Property name="text" type="java.lang.String" value="Perpustakaan Universitas Riau didirikan pada tahun 1962 bersamaan&#xa;dengan berdirinya Universitas Riau yang masih di bawah naungan&#xa;Yayasan Universitas Riau dan hanya menempati ruang seluas 100&#xa;meter persegi.&#xa;&#xa;Perpustakaan Universitas Riau mendapat nilai terbaik dalam akreditasi perpustakaan Tahun 2013, yaitu Kategori &#x201c;A&#x201d; . Hasil penilaian akreditasi Perpustakaan Universitas Riau oleh Tim Asesor Perpustakaan Nasional RI dari 17 September hingga 18 Desember 2013 tertuang dalam&#xa;Sertifikat Akreditasi Perpustakaan Perpustakaan Nasional RI Nomor 19/1/ee/XII.2013"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder roundedCorners="true" thickness="10">
@@ -160,6 +163,7 @@
                         </LineBorder>
                       </Border>
                     </Property>
+                    <Property name="focusCycleRoot" type="boolean" value="true"/>
                     <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                 </Component>
@@ -210,14 +214,14 @@
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[500, 5]"/>
+                  <Dimension value="[505, 5]"/>
                 </Property>
               </Properties>
 
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="500" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="505" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
