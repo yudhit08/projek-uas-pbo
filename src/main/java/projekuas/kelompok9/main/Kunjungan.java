@@ -567,20 +567,23 @@ public class Kunjungan extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //metode untuk memvalidasi string
     private static boolean isAlphabets(String str) {
  
         // check for null & empty
-        if(str == null || str.isEmpty() || str.length() == 0) {
+        if(str == null || str.isEmpty() || str.length() == 0 || !str.matches("[ a-zA-Z]+$")) {
  
             // return false
             return false;
+        } else {
+            return true;
         }
  
- 
         // return if its all match
-        return str.chars().allMatch(ch -> Character.isLetter(ch));
+        //return str.chars().allMatch(ch -> Character.isLetter(ch));
     }
     
+    //metode untuk memvalidasi angka
     public static boolean isNumeric(String strNum) {
         if (strNum == null) {
             return false;
@@ -594,7 +597,7 @@ public class Kunjungan extends javax.swing.JFrame {
     }
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        //manipulasi string kepentingan
         String kepentingan = "";
         if(bacaBuku.isSelected()) {
             if(kepentingan.length() != 0)
@@ -616,14 +619,18 @@ public class Kunjungan extends javax.swing.JFrame {
                 kepentingan += ", ";
             kepentingan += "Lain Lain";
         }
+        
+        //memasukkan nilai text field ke dalam variable 
         String nama = nameField.getText();
         String nim = nimField.getText();
         String fakultas = fakultasField.getText();
         String kritikSaran = kritikSaranField.getText();
         
+        //mengambil tanggal hari ini
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
         LocalDateTime now = LocalDateTime.now();  
         
+        //validasi form
         if(!isAlphabets(nama)) {
             JOptionPane.showMessageDialog(this, "Masukkan Nama anda dengan benar");
         } else if (!isNumeric(nim)) {
@@ -634,7 +641,7 @@ public class Kunjungan extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Masukkan kepentingan anda ");
         } else {
             try {
-            //Class.forName("com.mysql.cj.jdbc.Driver");
+            //koneksi ke database
             
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/perpustakaan","root","");
             
@@ -648,6 +655,7 @@ public class Kunjungan extends javax.swing.JFrame {
             con.close();
             countPengunjung();
             
+            //mengosongkan field setelah menginput data
             nameField.setText("");
             nimField.setText("");
             fakultasField.setText("");
@@ -666,7 +674,7 @@ public class Kunjungan extends javax.swing.JFrame {
 
     private void countPengunjung() {
         try {
-            //Class.forName("com.mysql.cj.jdbc.Driver");
+            //koneksi ke database
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");  
             LocalDateTime now = LocalDateTime.now();  
             
@@ -681,6 +689,8 @@ public class Kunjungan extends javax.swing.JFrame {
             int i = 0;
             int j = 0;
             while(rs.next()) {
+                //perintah yang mengecek apakah tanggal yang ada di database
+                //sama dengan tanggal hari ini dan bulan ini
                 String tanggal = String.valueOf(rs.getDate("tanggal"));
                 String bulanDb = tanggal.substring(5,7);
                 String bulanIni = dtf.format(now).substring(5,7);

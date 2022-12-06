@@ -59,7 +59,7 @@ public class Home extends javax.swing.JFrame {
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(6);
         jTextArea1.setTabSize(4);
-        jTextArea1.setText("Perpustakaan Universitas Riau didirikan pada tahun 1962 bersamaan\ndengan berdirinya Universitas Riau yang masih di bawah naungan\nYayasan Universitas Riau dan hanya menempati ruang seluas 100\nmeter persegi.\n\nPerpustakaan Universitas Riau mendapat nilai terbaik dalam akreditasi perpustakaan Tahun 2013, yaitu Kategori “A” . Hasil penilaian akreditasi Perpustakaan Universitas Riau oleh Tim Asesor Perpustakaan Nasional RI dari 17 September hingga 18 Desember 2013 tertuang dalam\nSertifikat Akreditasi Perpustakaan Perpustakaan Nasional RI Nomor 19/1/ee/XII.2013");
+        jTextArea1.setText("Perpustakaan Universitas Riau didirikan pada tahun 1962 bersamaan\ndengan berdirinya Universitas Riau yang masih di bawah naungan\nYayasan Universitas Riau dan hanya menempati ruang seluas 100\nmeter persegi.\n\nPerpustakaan Universitas Riau mendapat nilai terbaik dalam akreditasi perpustakaan Tahun 2013, yaitu Kategori “A” . Hasil penilaian akreditasiPerpustakaan Universitas Riau oleh Tim Asesor Perpustakaan Nasional RI dari 17 September hingga 18 Desember 2013 tertuang dalam\nSertifikat Akreditasi Perpustakaan Perpustakaan Nasional RI Nomor 19/1/ee/XII.2013");
         jTextArea1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 10, true));
         jTextArea1.setFocusCycleRoot(true);
         jTextArea1.setFocusable(false);
@@ -244,7 +244,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dataPengunjungBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                    .addComponent(dataPengunjungBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(homeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)

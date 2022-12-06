@@ -334,7 +334,7 @@ public class DaftarPengunjung extends javax.swing.JFrame {
     }//GEN-LAST:event_searchBoxKeyPressed
 
     private void searchBoxKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchBoxKeyReleased
-        // TODO add your handling code here:
+        //memasukkan value searchBox ke dalam variable
         String cari = searchBox.getText();
         DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
         tblModel.setRowCount(0);

@@ -12,6 +12,7 @@ package projekuas.kelompok9.main;
 public class Main {
 
     public static void main(String[] args) {
+        //membuka menu dashboard
         Home dashboard = new Home();
         dashboard.show();
     }

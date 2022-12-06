@@ -155,7 +155,7 @@
                     <Property name="lineWrap" type="boolean" value="true"/>
                     <Property name="rows" type="int" value="6"/>
                     <Property name="tabSize" type="int" value="4"/>
-                    <Property name="text" type="java.lang.String" value="Perpustakaan Universitas Riau didirikan pada tahun 1962 bersamaan&#xa;dengan berdirinya Universitas Riau yang masih di bawah naungan&#xa;Yayasan Universitas Riau dan hanya menempati ruang seluas 100&#xa;meter persegi.&#xa;&#xa;Perpustakaan Universitas Riau mendapat nilai terbaik dalam akreditasi perpustakaan Tahun 2013, yaitu Kategori &#x201c;A&#x201d; . Hasil penilaian akreditasi Perpustakaan Universitas Riau oleh Tim Asesor Perpustakaan Nasional RI dari 17 September hingga 18 Desember 2013 tertuang dalam&#xa;Sertifikat Akreditasi Perpustakaan Perpustakaan Nasional RI Nomor 19/1/ee/XII.2013"/>
+                    <Property name="text" type="java.lang.String" value="Perpustakaan Universitas Riau didirikan pada tahun 1962 bersamaan&#xa;dengan berdirinya Universitas Riau yang masih di bawah naungan&#xa;Yayasan Universitas Riau dan hanya menempati ruang seluas 100&#xa;meter persegi.&#xa;&#xa;Perpustakaan Universitas Riau mendapat nilai terbaik dalam akreditasi perpustakaan Tahun 2013, yaitu Kategori &#x201c;A&#x201d; . Hasil penilaian akreditasiPerpustakaan Universitas Riau oleh Tim Asesor Perpustakaan Nasional RI dari 17 September hingga 18 Desember 2013 tertuang dalam&#xa;Sertifikat Akreditasi Perpustakaan Perpustakaan Nasional RI Nomor 19/1/ee/XII.2013"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder roundedCorners="true" thickness="10">
@@ -315,7 +315,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="dataPengunjungBtn" pref="181" max="32767" attributes="0"/>
+                      <Component id="dataPengunjungBtn" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="homeBtn" alignment="0" min="-2" pref="167" max="-2" attributes="0"/>
