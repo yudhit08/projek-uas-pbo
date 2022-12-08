@@ -64,11 +64,18 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="searchBox" min="-2" pref="406" max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jPanel4" min="-2" pref="1055" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jPanel4" min="-2" pref="1055" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="46" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="searchBox" min="-2" pref="406" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="46" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -149,7 +156,7 @@
                           <Editor/>
                           <Renderer/>
                         </Column>
-                        <Column maxWidth="-1" minWidth="100" prefWidth="50" resizable="true">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                           <Title/>
                           <Editor/>
                           <Renderer/>
@@ -203,7 +210,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="66" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Masukkan Nama Mahasiswa"/>
+            <Property name="text" type="java.lang.String" value="Masukkan Data Mahasiswa"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="searchBox">

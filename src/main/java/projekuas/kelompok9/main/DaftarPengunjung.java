@@ -86,8 +86,6 @@ public class DaftarPengunjung extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
             jTable1.getColumnModel().getColumn(0).setPreferredWidth(1);
-            jTable1.getColumnModel().getColumn(1).setMinWidth(100);
-            jTable1.getColumnModel().getColumn(1).setPreferredWidth(50);
         }
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -106,7 +104,7 @@ public class DaftarPengunjung extends javax.swing.JFrame {
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Helvetica", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel3.setText("Masukkan Nama Mahasiswa");
+        jLabel3.setText("Masukkan Data Mahasiswa");
 
         searchBox.setBackground(new java.awt.Color(255, 255, 255));
         searchBox.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
@@ -133,10 +131,14 @@ public class DaftarPengunjung extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(searchBox, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 1055, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(46, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 1055, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(46, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(searchBox, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -347,7 +349,7 @@ public class DaftarPengunjung extends javax.swing.JFrame {
             Statement stm = con.createStatement();
             
             //mysql query
-            String sql = "SELECT * FROM pengunjung WHERE name LIKE '"+cari+"%'";
+            String sql = "SELECT * FROM pengunjung WHERE name LIKE '"+cari+"%' OR nim LIKE '"+cari+"%' OR fakultas LIKE '"+cari+"%'";
             
             ResultSet rs = stm.executeQuery(sql);
             
@@ -367,6 +369,7 @@ public class DaftarPengunjung extends javax.swing.JFrame {
                 tblModel.addRow(tbData);
                 i++;
             }
+            con.close();
         } catch(Exception e) {
             JOptionPane.showMessageDialog(this, e);
         }
@@ -375,7 +378,7 @@ public class DaftarPengunjung extends javax.swing.JFrame {
     private void searchBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_searchBoxActionPerformed
-
+ 
     private void tampilData() {
         try {
             //memulai koneksi
@@ -408,6 +411,8 @@ public class DaftarPengunjung extends javax.swing.JFrame {
                 tblModel.addRow(tbData);
                 i++;
             }
+            con.close();
+            
         } catch(Exception e) {
             JOptionPane.showMessageDialog(this, e);
         }

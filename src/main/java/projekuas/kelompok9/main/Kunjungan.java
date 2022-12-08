@@ -57,7 +57,6 @@ public class Kunjungan extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         nimField = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
-        fakultasField = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -67,6 +66,7 @@ public class Kunjungan extends javax.swing.JFrame {
         kembalikanBuku = new javax.swing.JCheckBox();
         lainLain = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
+        fakultasBox = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -250,10 +250,6 @@ public class Kunjungan extends javax.swing.JFrame {
         jLabel28.setForeground(new java.awt.Color(153, 153, 153));
         jLabel28.setText("Fakultas                           :");
 
-        fakultasField.setBackground(new java.awt.Color(255, 255, 255));
-        fakultasField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
-        fakultasField.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-
         jLabel29.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(153, 153, 153));
         jLabel29.setText("Kepentingan                    :");
@@ -314,6 +310,13 @@ public class Kunjungan extends javax.swing.JFrame {
             }
         });
 
+        fakultasBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FT", "FEB", "FK", "FMIPA", "FKIP", "FAPERTA", "FAPERIKA", "FH", "FISIP", "None" }));
+        fakultasBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                fakultasBoxItemStateChanged(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -335,14 +338,11 @@ public class Kunjungan extends javax.swing.JFrame {
                             .addComponent(jLabel27)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(nimField, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel6Layout.createSequentialGroup()
-                            .addComponent(jLabel28)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(fakultasField, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel29)
-                                .addComponent(jLabel30))
+                                .addComponent(jLabel30)
+                                .addComponent(jLabel28))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -354,7 +354,8 @@ public class Kunjungan extends javax.swing.JFrame {
                                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(lainLain)
                                         .addComponent(kembalikanBuku))
-                                    .addGap(97, 97, 97))))))
+                                    .addGap(97, 97, 97))
+                                .addComponent(fakultasBox, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -379,7 +380,7 @@ public class Kunjungan extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
-                    .addComponent(fakultasField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fakultasBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel29)
@@ -623,8 +624,9 @@ public class Kunjungan extends javax.swing.JFrame {
         //memasukkan nilai text field ke dalam variable 
         String nama = nameField.getText();
         String nim = nimField.getText();
-        String fakultas = fakultasField.getText();
+        String fakultas = fakultasBox.getSelectedItem().toString();
         String kritikSaran = kritikSaranField.getText();
+        String namaFakultas = fakultasBox.getSelectedItem().toString();
         
         //mengambil tanggal hari ini
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
@@ -633,12 +635,10 @@ public class Kunjungan extends javax.swing.JFrame {
         //validasi form
         if(!isAlphabets(nama)) {
             JOptionPane.showMessageDialog(this, "Masukkan Nama anda dengan benar");
-        } else if (!isNumeric(nim)) {
+        } else if (!namaFakultas.equals("None") && !isNumeric(nim)) {
             JOptionPane.showMessageDialog(this, "Masukkan Nomor Mahasiswa anda dengan benar");
-        } else if (!isAlphabets(fakultas)) {
-            JOptionPane.showMessageDialog(this, "Masukkan Fakultas anda dengan benar");
         } else if (kepentingan.equals("")) {
-            JOptionPane.showMessageDialog(this, "Masukkan kepentingan anda ");
+            JOptionPane.showMessageDialog(this, "Masukkan kepentingan anda");
         } else {
             try {
             //koneksi ke database
@@ -658,7 +658,7 @@ public class Kunjungan extends javax.swing.JFrame {
             //mengosongkan field setelah menginput data
             nameField.setText("");
             nimField.setText("");
-            fakultasField.setText("");
+            fakultasBox.setSelectedIndex(0);
             kritikSaranField.setText("");
             
             bacaBuku.setSelected(false);
@@ -727,7 +727,7 @@ public class Kunjungan extends javax.swing.JFrame {
         // TODO add your handling code here:
         Kunjungan kunjungan = new Kunjungan();
         kunjungan.setVisible(true);
-
+        
         dispose();
     }//GEN-LAST:event_inputMenuBtnMouseClicked
 
@@ -750,6 +750,17 @@ public class Kunjungan extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_bacaBukuActionPerformed
+
+    private void fakultasBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_fakultasBoxItemStateChanged
+        // TODO add your handling code here:
+        String pilihFakultas = fakultasBox.getSelectedItem().toString();
+        if(pilihFakultas.equals("None")) {
+            nimField.setText("");
+            nimField.setEditable(false);
+        } else {
+            nimField.setEditable(true);
+        }
+    }//GEN-LAST:event_fakultasBoxItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -797,7 +808,7 @@ public class Kunjungan extends javax.swing.JFrame {
     private javax.swing.JCheckBox bacaBuku;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel dataPengunjungBtn;
-    private javax.swing.JTextField fakultasField;
+    private javax.swing.JComboBox<String> fakultasBox;
     private javax.swing.JLabel homeBtn;
     private javax.swing.JLabel inputMenuBtn;
     private javax.swing.JButton jButton1;
